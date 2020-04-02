@@ -1,0 +1,39 @@
+# US-West2
+# create storage accounts
+for n in 0 1 2 3 4 5 6 7 8 9 a b c d e f; do az storage account create -n exawestp${n} -g exa -l westus2 --sku Premium_LRS --kind BlockBlobStorage --https-only false; done
+# remember id
+for n in 0 1 2 3 4 5 6 7 8 9 a b c d e f; do az storage container create --public-access blob --account-name exawestp${n} -n exa-west; done
+
+az role definition list --name "Storage Blob Data Contributor"
+az identity list
+# llok for clientId
+
+
+$ Authorize "blob-writer"
+for n in 0 1 2 3 4 5 6 7 8 9 a b c d e f; do az role assignment create --role "Storage Blob Data Contributor" --scope "/subscriptions/$MYAZUREID/resourceGroups/exa/providers/Microsoft.Storage/storageAccounts/exawestp${n}" --assignee "$BLOBID"; done
+
+# US-West
+for n in 0 1 2 3 4 5 6 7 8 9 a b c d e f; do az storage account create -n exawest1p${n} -g exa -l westus --sku Premium_LRS --kind BlockBlobStorage --https-only false; done
+for n in 0 1 2 3 4 5 6 7 8 9 a b c d e f; do az storage container create --public-access blob --account-name exawest1p${n} -n exa-west; done
+
+for n in 0 1 2 3 4 5 6 7 8 9 a b c d e f; do az role assignment create --role "Storage Blob Data Contributor" --scope "/subscriptions/$MYAZUREID/resourceGroups/exa/providers/Microsoft.Storage/storageAccounts/exawest1p${n}" --assignee "$BLOBID"; done
+
+
+# US-East
+for n in 0 1 2 3 4 5 6 7 8 9 a b c d e f ; do az storage account create -n exaeastp${n} -g exa -l eastus --sku Premium_LRS --kind BlockBlobStorage --https-only false; done
+for n in 0 1 2 3 4 5 6 7 8 9 a b c d e f; do az storage container create --public-access blob --account-name exaeastp${n} -n exa-east; done
+
+for n in 0 1 2 3 4 5 6 7 8 9 a b c d e f; do az role assignment create --role "Storage Blob Data Contributor" --scope "/subscriptions/$MYAZUREID/resourceGroups/exa/providers/Microsoft.Storage/storageAccounts/exaeastp${n}" --assignee "$BLOBID"; done
+
+
+# Europe West
+for n in 0 1 2 3 4 5 6 7 8 9 a b c d e f ; do az storage account create -n exaeuwestp${n} -g exa -l westeurope --sku Premium_LRS --kind BlockBlobStorage --https-only false; done
+for n in 0 1 2 3 4 5 6 7 8 9 a b c d e f; do az storage container create --public-access blob --account-name exaeuwestp${n} -n exa-eu-west; done
+
+for n in 0 1 2 3 4 5 6 7 8 9 a b c d e f; do az role assignment create --role "Storage Blob Data Contributor" --scope "/subscriptions/$MYAZUREID/resourceGroups/exa/providers/Microsoft.Storage/storageAccounts/exaeuwestp${n}" --assignee "$BLOBID"; done
+
+# US SouthCentral
+for n in 0 1 2 3 4 5 6 7 8 9 a b c d e f ; do az storage account create -n exausscp${n} -g exa -l southcentralus --sku Premium_LRS --kind BlockBlobStorage --https-only false; done
+for n in 0 1 2 3 4 5 6 7 8 9 a b c d e f; do az storage container create --public-access blob --account-name exausscp${n} -n exa-sc; done
+
+for n in 0 1 2 3 4 5 6 7 8 9 a b c d e f; do az role assignment create --role "Storage Blob Data Contributor" --scope "/subscriptions/$MYAZUREID/resourceGroups/exa/providers/Microsoft.Storage/storageAccounts/exausscp${n}" --assignee "$BLOBID"; done

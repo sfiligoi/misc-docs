@@ -1,0 +1,20 @@
+commit d3032ccbe049f08f2d4f292a4735d7f470f8d2f8
+Author: Igor Sfiligoi <isfiligoi@sdsc.edu>
+Date:   Tue Apr 9 20:03:30 2024 -0700
+
+    Add support for development pragma DISABLE_PART_TWO_TESTING
+
+commit 7f4c777f76b4f1100aafb3bef788e9b8431a320b
+Author: Igor Sfiligoi <isfiligoi@sdsc.edu>
+Date:   Thu Mar 21 14:06:42 2024 -0700
+
+    Use more standard optimization flags
+
+commit bb35342572b33199c106aba4cf76bc61fe579ed9
+Author: Igor Sfiligoi <isfiligoi@sdsc.edu>
+Date:   Thu Mar 21 13:29:33 2024 -0700
+
+    Fix logical bug in MultiSeedAligner that would go past the limits
+
+commit 709164f6dbd844f76ed4dd89aaea458027cc2a2e
+Author: Igor Sfiligoi <isfiligoi@sdsc.edu>

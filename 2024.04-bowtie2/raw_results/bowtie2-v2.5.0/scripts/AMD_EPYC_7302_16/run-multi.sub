@@ -1,0 +1,43 @@
+#!/bin/bash
+#SBATCH --mem=320G
+#SBATCH --exclusive
+#SBATCH -o slurm-run-multi-%j.out
+#SBATCH -e slurm-run-multi-%j.out
+#SBATCH -t 8:00:00
+hostname
+lscpu
+echo "=============="
+BDIR=/home/isfiligoi/github/bowtie2-new-wtiming/bowtie2/batch32
+
+files=`(cd ${BDIR} && ls run-*.sub)`
+for f in $files; do
+  echo "${BDIR}/$f"
+  ${BDIR}/$f > mslurm-${f}-${SLURM_JOB_ID}-32.new.out 2>&1
+done
+echo "=============="
+
+BDIR=/home/isfiligoi/github/bowtie2-org-wtiming/bowtie2/batch32
+
+files=`(cd ${BDIR} && ls run-*.sub)`
+for f in $files; do
+  echo "${BDIR}/$f"
+  ${BDIR}/$f > mslurm-${f}-${SLURM_JOB_ID}-32.org.out 2>&1
+done
+echo "=============="
+BDIR=/home/isfiligoi/github/bowtie2-new-wtiming/bowtie2/batch
+
+files=`(cd ${BDIR} && ls run-*.sub)`
+for f in $files; do
+  echo "${BDIR}/$f"
+  ${BDIR}/$f > mslurm-${f}-${SLURM_JOB_ID}-16.new.out 2>&1
+done
+echo "=============="
+
+BDIR=/home/isfiligoi/github/bowtie2-org-wtiming/bowtie2/batch
+
+files=`(cd ${BDIR} && ls run-*.sub)`
+for f in $files; do
+  echo "${BDIR}/$f"
+  ${BDIR}/$f > mslurm-${f}-${SLURM_JOB_ID}-16.org.out 2>&1
+done
+

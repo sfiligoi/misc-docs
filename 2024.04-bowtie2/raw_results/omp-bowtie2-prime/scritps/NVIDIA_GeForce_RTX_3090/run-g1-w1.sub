@@ -1,0 +1,23 @@
+#!/bin/bash
+#SBATCH --mem=320G
+#SBATCH --exclusive
+#SBATCH --partition gpu
+#SBATCH --gres=gpu:1
+#SBATCH -o slurm-run-g1-w1-%j.out
+#SBATCH -e slurm-run-g1-w1-%j.out
+#SBATCH -t 12:00:00
+hostname
+lscpu
+echo "=============="
+export DBPATH=/scratch/qp-woltka/WoLr1/WoLr1
+md5sum ${DBPATH}*
+
+INDIR=/qmounts/qiita_data/per_sample_FASTQ/101636/
+INFILE=Girguis50_RightEG4_host_filtered.fastq.gz
+
+export INPATH=${INDIR}/${INFILE}
+md5sum ${INPATH}
+echo "=============="
+
+./run-gcc.sh
+./run-nv.sh

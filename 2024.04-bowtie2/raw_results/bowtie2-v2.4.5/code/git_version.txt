@@ -1,0 +1,20 @@
+commit 6e2536972f82eaf7e64dd367283f32d162d9f76f
+Author: Rone Charles <rone_charles@fastmail.com>
+Date:   Mon Sep 20 09:53:59 2021 -0400
+
+    Skip aligned reads when processing BAM file
+
+commit ed15e8e19d7486c87c55fc23e086f3e743a3c55f
+Author: Rone Charles <rone_charles@fastmail.com>
+Date:   Sun Aug 8 18:41:08 2021 -0400
+
+    Fix output format of auxillary data array fields
+
+commit 5b2fd723a2a7a4bc92f612b61ff8b1ad16947e6d
+Author: Rone Charles <rone_charles@fastmail.com>
+Date:   Sun Aug 8 18:39:00 2021 -0400
+
+    Fix issue causing bowtie2 to segfault when reading BAM data from stdin
+
+commit e05a661a220c9813d2d946afe8b466b64e6b9b48
+Author: Rone Charles <rone_charles@fastmail.com>

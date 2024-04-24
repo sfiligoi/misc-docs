@@ -1,0 +1,31 @@
+#!/bin/bash
+lscpu
+cd  /data/igor/bowtie2-new-wtiming/bowtie2
+echo "============================="
+
+DBDIR=/scratch/WoLr1/WoLr1
+
+INDIR=/scratch/inputs/
+INFILE=Mousseau88_FIN_373_host_filtered.fastq.gz
+
+INPATH=${INDIR}/${INFILE}
+md5sum ${INPATH}
+
+echo "#./bowtie2 -p 20 --no-exact-upfront --no-1mm-upfront -x $DBDIR -q ${INPATH} --seed 42 --very-sensitive -k 16 --np 1 --mp "1,1" --rdg "0,1" --rfg "0,1" --score-min  "L,0,-0.05" --no-head --no-unal |wc"
+echo "==== CPU 1 =========="
+rm -f a.saml
+time taskset -c 0-9,80-89 ./bowtie2 -p 20 --no-exact-upfront --no-1mm-upfront -x $DBDIR -q ${INPATH} --seed 42 --very-sensitive -k 16 --np 1 --mp "1,1" --rdg "0,1" --rfg "0,1" --score-min  "L,0,-0.05" --no-head --no-unal |wc
+echo "==== CPU 2 =========="
+rm -f a.saml
+time taskset -c 40-49,120-129 ./bowtie2 -p 20 --no-exact-upfront --no-1mm-upfront -x $DBDIR -q ${INPATH} --seed 42 --very-sensitive -k 16 --np 1 --mp "1,1" --rdg "0,1" --rfg "0,1" --score-min  "L,0,-0.05" --no-head --no-unal |wc
+echo "=============="
+
+echo "#./bowtie2 -p 80 --no-exact-upfront --no-1mm-upfront -x $DBDIR -q ${INPATH} --seed 42 --very-sensitive -k 16 --np 1 --mp "1,1" --rdg "0,1" --rfg "0,1" --score-min  "L,0,-0.05" --no-head --no-unal |wc"
+echo "==== CPU 1 =========="
+rm -f a.saml
+time taskset -c 0-39,80-119 ./bowtie2 -p 80 --no-exact-upfront --no-1mm-upfront -x $DBDIR -q ${INPATH} --seed 42 --very-sensitive -k 16 --np 1 --mp "1,1" --rdg "0,1" --rfg "0,1" --score-min  "L,0,-0.05" --no-head --no-unal |wc
+echo "==== CPU 2 =========="
+rm -f a.saml
+time taskset -c 40-79,120-159 ./bowtie2 -p 80 --no-exact-upfront --no-1mm-upfront -x $DBDIR -q ${INPATH} --seed 42 --very-sensitive -k 16 --np 1 --mp "1,1" --rdg "0,1" --rfg "0,1" --score-min  "L,0,-0.05" --no-head --no-unal |wc
+echo "=============="
+

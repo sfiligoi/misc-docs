@@ -1,0 +1,1563 @@
+b2-022
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                32
+On-line CPU(s) list:   0-31
+Thread(s) per core:    1
+Core(s) per socket:    16
+Socket(s):             2
+NUMA node(s):          2
+Vendor ID:             AuthenticAMD
+CPU family:            23
+Model:                 49
+Model name:            AMD EPYC 7302 16-Core Processor
+Stepping:              0
+CPU MHz:               1500.000
+CPU max MHz:           3000.0000
+CPU min MHz:           1500.0000
+BogoMIPS:              5999.84
+Virtualization:        AMD-V
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              512K
+L3 cache:              16384K
+NUMA node0 CPU(s):     0-15
+NUMA node1 CPU(s):     16-31
+Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc art rep_good nopl nonstop_tsc extd_apicid aperfmperf eagerfpu pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_l2 cpb cat_l3 cdp_l3 hw_pstate sme retpoline_amd ssbd ibrs ibpb stibp vmmcall fsgsbase bmi1 avx2 smep bmi2 cqm rdt_a rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local clzero irperf xsaveerptr arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif umip overflow_recov succor smca
+==============
+166eb8051303a2c4dc8d09f661ed0999  /scratch/qp-woltka/WoLr1/WoLr1.1.bt2l
+2f00504b58aa988c42a48752bfe0b245  /scratch/qp-woltka/WoLr1/WoLr1.2.bt2l
+45d7306f84c3f3193dc0ff743127236f  /scratch/qp-woltka/WoLr1/WoLr1.3.bt2l
+28bdfe07cea0d4db067d296b46d5b6c7  /scratch/qp-woltka/WoLr1/WoLr1.4.bt2l
+0fe78a762a8d08a065123715fa2743cd  /scratch/qp-woltka/WoLr1/WoLr1.coords
+b1d5b8c97af1c057283d658d6f10a445  /scratch/qp-woltka/WoLr1/WoLr1.rev.1.bt2l
+2863ae07aba42d68d80cd904e8bf1a3d  /scratch/qp-woltka/WoLr1/WoLr1.rev.2.bt2l
+7ce4b379d026b8ca6c7010d879e0c48e  /scratch/qp-woltka/WoLr1/WoLr1.shear
+e6903d664524c117c1876c6822a73403  /scratch/qp-woltka/WoLr1/WoLr1.tax
+b806cfba7dee4891cc9ef85b379d0c4f  /qmounts/qiita_data/per_sample_FASTQ/101636//Song53_24613_host_filtered.fastq.gz
+==============
+==============
+==============
+#./bowtie2-new -p 16 --no-exact-upfront --no-1mm-upfront -x /scratch/qp-woltka/WoLr1/WoLr1 -q /qmounts/qiita_data/per_sample_FASTQ/101636//Song53_24613_host_filtered.fastq.gz --seed 42 --very-sensitive -k 16 --np 1 --mp 1,1 --rdg 0,1 --rfg 0,1 --score-min  L,0,-0.05 --no-head --no-unal |wc
+==== CPU 1 ==========
+Timer: 0                       1.35431042 read
+Timer: 1                       3.52462769 mmSeeds+instantiateSeeds
+Timer: 2                      38.75984182 searchAllSeeds
+Timer: 3                     116.90445614 extendSeeds
+Timer: 4                       0.05344226 searchAllSeeds
+Timer: 5                       0.25796947 extendSeeds
+Timer: 6                       3.78734740 searchAllSeeds
+Timer: 7                       0.02469749 extendSeeds
+Timer: 8                       7.84104202 finishReadOne
+Timer: 9                       1.92823954 extendSeeds
+Timer: 10                       0.02234411 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.31901083 read
+Timer: 1                       3.52231204 mmSeeds+instantiateSeeds
+Timer: 2                      38.75412355 searchAllSeeds
+Timer: 3                     116.26411444 extendSeeds
+Timer: 4                       0.05652094 searchAllSeeds
+Timer: 5                       0.28029508 extendSeeds
+Timer: 6                       4.00229509 searchAllSeeds
+Timer: 7                       0.02615751 extendSeeds
+Timer: 8                       7.78749839 finishReadOne
+Timer: 9                       2.19695217 extendSeeds
+Timer: 10                       0.02020502 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.36747563 read
+Timer: 1                       3.58711907 mmSeeds+instantiateSeeds
+Timer: 2                      38.69320717 searchAllSeeds
+Timer: 3                     116.56507970 extendSeeds
+Timer: 4                       0.07225178 searchAllSeeds
+Timer: 5                       0.24740983 extendSeeds
+Timer: 6                       3.90660074 searchAllSeeds
+Timer: 7                       0.02483425 extendSeeds
+Timer: 8                       7.85853120 finishReadOne
+Timer: 9                       2.03655041 extendSeeds
+Timer: 10                       0.03898557 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.33448305 read
+Timer: 1                       3.53764612 mmSeeds+instantiateSeeds
+Timer: 2                      38.60121833 searchAllSeeds
+Timer: 3                     116.15920225 extendSeeds
+Timer: 4                       0.05325467 searchAllSeeds
+Timer: 5                       0.25836290 extendSeeds
+Timer: 6                       3.99522964 searchAllSeeds
+Timer: 7                       0.04493129 extendSeeds
+Timer: 8                       7.90490543 finishReadOne
+Timer: 9                       2.21895492 extendSeeds
+Timer: 10                       0.03250653 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.33575627 read
+Timer: 1                       3.49228703 mmSeeds+instantiateSeeds
+Timer: 2                      38.50565453 searchAllSeeds
+Timer: 3                     116.43022581 extendSeeds
+Timer: 4                       0.07402850 searchAllSeeds
+Timer: 5                       0.27659194 extendSeeds
+Timer: 6                       4.15982841 searchAllSeeds
+Timer: 7                       0.02610607 extendSeeds
+Timer: 8                       7.72943255 finishReadOne
+Timer: 9                       2.09741054 extendSeeds
+Timer: 10                       0.05980691 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.36428501 read
+Timer: 1                       3.62675251 mmSeeds+instantiateSeeds
+Timer: 2                      38.81331350 searchAllSeeds
+Timer: 3                     116.27428827 extendSeeds
+Timer: 4                       0.05151944 searchAllSeeds
+Timer: 5                       0.27179810 extendSeeds
+Timer: 0                       1.29745890 read
+Timer: 1                       3.53688202 mmSeeds+instantiateSeeds
+Timer: 2                      38.77510745 searchAllSeeds
+Timer: 3                     116.60104407 extendSeeds
+Timer: 4                       0.05449817 searchAllSeeds
+Timer: 5                       0.26031516 extendSeeds
+Timer: 6                       3.84755966 searchAllSeeds
+Timer: 7                       0.02523837 extendSeeds
+Timer: 8                       7.89029719 finishReadOne
+Timer: 9                       2.03680010 finishReadOne
+Timer: 10                       0.02681016 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 0                       1.37837262 read
+Timer: 1                       3.47452418 mmSeeds+instantiateSeeds
+Timer: 2                      38.61960203 searchAllSeeds
+Timer: 3                     116.91027832 extendSeeds
+Timer: 4                       0.05616567 searchAllSeeds
+Timer: 5                       0.24957655 extendSeeds
+Timer: 6                       3.74839360 searchAllSeeds
+Timer: 6                       3.75820102 searchAllSeeds
+Timer: 7                       0.02405710 extendSeeds
+Timer: 8                       7.87207032 finishReadOne
+Timer: 9                       2.08760956 finishReadOne
+Timer: 10                       0.05305306 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 0                       1.30345245 read
+Timer: 1                       3.52850881 mmSeeds+instantiateSeeds
+Timer: 2                      39.03847165 searchAllSeeds
+Timer: 3                     116.37817492 extendSeeds
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 7                       0.02530135 extendSeeds
+Timer: 4                       0.05548126 searchAllSeeds
+Timer: 8                       7.86136069 finishReadOne
+Timer: 15                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 5                       0.30161327 extendSeeds
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 9                       2.01964595 extendSeeds
+Timer: 6                       3.82863432 searchAllSeeds
+Timer: 10                       0.01375306 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 7                       0.02527602 extendSeeds
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 8                       7.85727240 finishReadOne
+Timer: 29                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 9                       1.99803921 extendSeeds
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 10                       0.03677653 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.30570214 read
+Timer: 1                       3.58698344 mmSeeds+instantiateSeeds
+Timer: 2                      38.93230345 searchAllSeeds
+Timer: 3                     116.15827776 extendSeeds
+Timer: 4                       0.05263055 searchAllSeeds
+Timer: 5                       0.25151591 extendSeeds
+Timer: 6                       3.79832415 searchAllSeeds
+Timer: 7                       0.02454691 extendSeeds
+Timer: 8                       7.97537616 finishReadOne
+Timer: 9                       2.07963715 extendSeeds
+Timer: 10                       0.02356720 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.29800862 read
+Timer: 1                       3.59362258 mmSeeds+instantiateSeeds
+Timer: 2                      39.03202153 searchAllSeeds
+Timer: 3                     116.39850091 extendSeeds
+Timer: 4                       0.05440088 searchAllSeeds
+Timer: 5                       0.25155206 extendSeeds
+Timer: 6                       3.86595222 searchAllSeeds
+Timer: 7                       0.02550064 extendSeeds
+Timer: 8                       7.74191040 finishReadOne
+Timer: 9                       2.05204855 extendSeeds
+Timer: 10                       0.03442379 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.39775615 read
+Timer: 1                       3.47414882 mmSeeds+instantiateSeeds
+Timer: 2                      38.36192628 searchAllSeeds
+Timer: 3                     116.62581190 extendSeeds
+Timer: 4                       0.05487297 searchAllSeeds
+Timer: 5                       0.26512501 extendSeeds
+Timer: 6                       3.92336177 searchAllSeeds
+Timer: 7                       0.02513386 extendSeeds
+Timer: 8                       7.89216470 finishReadOne
+Timer: 9                       2.02666801 extendSeeds
+Timer: 10                       0.02790079 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.33221158 read
+Timer: 1                       3.52627596 mmSeeds+instantiateSeeds
+Timer: 2                      38.37325601 searchAllSeeds
+Timer: 3                     116.77509935 extendSeeds
+Timer: 4                       0.05480212 searchAllSeeds
+Timer: 5                       0.26274208 extendSeeds
+Timer: 6                       4.05479789 searchAllSeeds
+Timer: 7                       0.02490033 extendSeeds
+Timer: 8                       7.91881889 finishReadOne
+Timer: 9                       2.11733467 extendSeeds
+Timer: 10                       0.02421868 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.36352337 read
+Timer: 1                       3.50894068 mmSeeds+instantiateSeeds
+Timer: 2                      38.97677354 searchAllSeeds
+Timer: 3                     116.08635572 extendSeeds
+Timer: 4                       0.05832335 searchAllSeeds
+Timer: 5                       0.27934823 extendSeeds
+Timer: 6                       3.91399816 searchAllSeeds
+Timer: 7                       0.02605753 extendSeeds
+Timer: 8                       7.99543783 finishReadOne
+Timer: 9                       2.10775720 finishReadOne
+Timer: 10                       0.02725320 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.36096630 read
+Timer: 1                       3.51568978 mmSeeds+instantiateSeeds
+Timer: 2                      38.95723288 searchAllSeeds
+Timer: 3                     115.88458489 extendSeeds
+Timer: 4                       0.05306327 searchAllSeeds
+Timer: 5                       0.27712881 extendSeeds
+Timer: 6                       4.07229683 searchAllSeeds
+Timer: 7                       0.02552343 extendSeeds
+Timer: 8                       7.82521383 finishReadOne
+Timer: 9                       2.20175170 extendSeeds
+Timer: 10                       0.04188224 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.37237771 read
+Timer: 1                       3.51975505 mmSeeds+instantiateSeeds
+Timer: 2                      38.93765086 searchAllSeeds
+Timer: 3                     116.14575272 extendSeeds
+Timer: 4                       0.05321770 searchAllSeeds
+Timer: 5                       0.25353313 extendSeeds
+Timer: 6                       3.92337537 searchAllSeeds
+Timer: 7                       0.02541312 extendSeeds
+Timer: 8                       7.88002537 finishReadOne
+Timer: 9                       2.17741237 extendSeeds
+Timer: 10                       0.02578817 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+6548484 reads; of these:
+  6548484 (100.00%) were unpaired; of these:
+    2529436 (38.63%) aligned 0 times
+    3566500 (54.46%) aligned exactly 1 time
+    452548 (6.91%) aligned >1 times
+61.37% overall alignment rate
+6902980 134493100 3092621263
+
+real	3m3.017s
+user	46m9.682s
+sys	1m27.576s
+==== CPU 2 ==========
+Timer: 0                       1.28880561 read
+Timer: 1                       3.56940086 mmSeeds+instantiateSeeds
+Timer: 2                      38.47009971 searchAllSeeds
+Timer: 3                     115.70882403 extendSeeds
+Timer: 4                       0.07193186 searchAllSeeds
+Timer: 5                       0.29986410 extendSeeds
+Timer: 6                       4.09676431 searchAllSeeds
+Timer: 7                       0.02674802 extendSeeds
+Timer: 0                       1.35073166 read
+Timer: 1                       3.52422075 mmSeeds+instantiateSeeds
+Timer: 2                      38.39998157 searchAllSeeds
+Timer: 3                     116.24830949 extendSeeds
+Timer: 4                       0.05157474 searchAllSeeds
+Timer: 5                       0.27251523 extendSeeds
+Timer: 8                       6.87191598 finishReadOne
+Timer: 9                       2.20289380 extendSeeds
+Timer: 10                       0.04310275 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 6                       3.94682637 searchAllSeeds
+Timer: 7                       0.02552315 extendSeeds
+Timer: 8                       6.73228531 finishReadOne
+Timer: 9                       2.05014216 finishReadOne
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 10                       0.02589756 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.34589951 read
+Timer: 1                       3.64461829 mmSeeds+instantiateSeeds
+Timer: 2                      38.62086525 searchAllSeeds
+Timer: 3                     116.24140330 extendSeeds
+Timer: 4                       0.04862350 searchAllSeeds
+Timer: 5                       0.25528471 extendSeeds
+Timer: 6                       3.75718115 searchAllSeeds
+Timer: 7                       0.02444995 extendSeeds
+Timer: 8                       6.83889847 finishReadOne
+Timer: 9                       2.00153543 extendSeeds
+Timer: 10                       0.01668785 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.39021401 read
+Timer: 1                       3.51711686 mmSeeds+instantiateSeeds
+Timer: 2                      38.56788828 searchAllSeeds
+Timer: 3                     115.82828063 extendSeeds
+Timer: 4                       0.08185172 searchAllSeeds
+Timer: 5                       0.26354835 extendSeeds
+Timer: 6                       3.85686427 searchAllSeeds
+Timer: 7                       0.02559995 extendSeeds
+Timer: 8                       6.82804590 finishReadOne
+Timer: 9                       2.13473348 extendSeeds
+Timer: 10                       0.02935834 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.39022603 read
+Timer: 1                       3.48077663 mmSeeds+instantiateSeeds
+Timer: 2                      38.75731122 searchAllSeeds
+Timer: 3                     115.75734483 extendSeeds
+Timer: 4                       0.05061848 searchAllSeeds
+Timer: 5                       0.26936497 extendSeeds
+Timer: 6                       3.92771916 searchAllSeeds
+Timer: 7                       0.02531974 extendSeeds
+Timer: 8                       6.74526171 finishReadOne
+Timer: 9                       2.05733275 extendSeeds
+Timer: 10                       0.02157033 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.34413047 read
+Timer: 1                       3.49175725 mmSeeds+instantiateSeeds
+Timer: 2                      38.42176822 searchAllSeeds
+Timer: 3                     116.00934435 extendSeeds
+Timer: 4                       0.04839517 searchAllSeeds
+Timer: 5                       0.25642096 extendSeeds
+Timer: 6                       4.14935439 searchAllSeeds
+Timer: 7                       0.02516794 extendSeeds
+Timer: 8                       6.77333951 finishReadOne
+Timer: 9                       2.18282761 extendSeeds
+Timer: 10                       0.02820820 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.36716587 read
+Timer: 1                       3.54078463 mmSeeds+instantiateSeeds
+Timer: 2                      38.51179045 searchAllSeeds
+Timer: 3                     116.27554997 extendSeeds
+Timer: 4                       0.05088063 searchAllSeeds
+Timer: 5                       0.29267234 extendSeeds
+Timer: 6                       3.88713332 searchAllSeeds
+Timer: 7                       0.02559236 extendSeeds
+Timer: 8                       6.73324148 finishReadOne
+Timer: 9                       2.01370693 extendSeeds
+Timer: 10                       0.02790612 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.28563599 read
+Timer: 1                       3.57831914 mmSeeds+instantiateSeeds
+Timer: 2                      38.27957492 searchAllSeeds
+Timer: 3                     116.13666541 extendSeeds
+Timer: 4                       0.05114568 searchAllSeeds
+Timer: 5                       0.26237344 extendSeeds
+Timer: 6                       3.96327618 searchAllSeeds
+Timer: 7                       0.02537965 extendSeeds
+Timer: 8                       6.77251711 finishReadOne
+Timer: 9                       2.14113133 extendSeeds
+Timer: 10                       0.01418011 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.31447813 read
+Timer: 1                       3.64733874 mmSeeds+instantiateSeeds
+Timer: 2                      38.64558742 searchAllSeeds
+Timer: 3                     115.73575977 extendSeeds
+Timer: 4                       0.04852999 searchAllSeeds
+Timer: 5                       0.24925268 extendSeeds
+Timer: 6                       3.93088508 searchAllSeeds
+Timer: 7                       0.02514177 extendSeeds
+Timer: 8                       6.83350722 finishReadOne
+Timer: 9                       2.15085336 extendSeeds
+Timer: 10                       0.03665609 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.36275982 read
+Timer: 1                       3.52232416 mmSeeds+instantiateSeeds
+Timer: 2                      38.63674592 searchAllSeeds
+Timer: 3                     115.94792756 extendSeeds
+Timer: 4                       0.04813618 searchAllSeeds
+Timer: 5                       0.25376765 extendSeeds
+Timer: 6                       3.82814598 searchAllSeeds
+Timer: 7                       0.02473689 extendSeeds
+Timer: 8                       6.78871037 finishReadOne
+Timer: 9                       2.06365843 extendSeeds
+Timer: 10                       0.05812597 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.26965337 read
+Timer: 1                       3.52704399 mmSeeds+instantiateSeeds
+Timer: 2                      38.74888759 searchAllSeeds
+Timer: 3                     116.08954121 extendSeeds
+Timer: 4                       0.04870846 searchAllSeeds
+Timer: 5                       0.27875948 extendSeeds
+Timer: 6                       3.83960211 searchAllSeeds
+Timer: 7                       0.03479819 extendSeeds
+Timer: 8                       6.87575836 finishReadOne
+Timer: 9                       2.00790583 extendSeeds
+Timer: 10                       0.03407117 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.39086745 read
+Timer: 1                       3.48825934 mmSeeds+instantiateSeeds
+Timer: 2                      38.85847481 searchAllSeeds
+Timer: 3                     115.94881129 extendSeeds
+Timer: 4                       0.07019928 searchAllSeeds
+Timer: 5                       0.24792818 extendSeeds
+Timer: 6                       3.84008500 searchAllSeeds
+Timer: 7                       0.02453109 extendSeeds
+Timer: 8                       6.79607633 finishReadOne
+Timer: 9                       1.99030642 extendSeeds
+Timer: 10                       0.02827531 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.24533098 read
+Timer: 1                       3.51402020 mmSeeds+instantiateSeeds
+Timer: 2                      38.47714258 searchAllSeeds
+Timer: 3                     116.30748026 extendSeeds
+Timer: 4                       0.04928752 searchAllSeeds
+Timer: 5                       0.25775024 extendSeeds
+Timer: 6                       3.98295285 searchAllSeeds
+Timer: 7                       0.02499014 extendSeeds
+Timer: 8                       6.67688848 finishReadOne
+Timer: 9                       2.14467239 extendSeeds
+Timer: 10                       0.03173653 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.30964988 read
+Timer: 1                       3.50961951 mmSeeds+instantiateSeeds
+Timer: 2                      38.56776408 searchAllSeeds
+Timer: 3                     116.08020764 extendSeeds
+Timer: 4                       0.04942946 searchAllSeeds
+Timer: 5                       0.25371201 extendSeeds
+Timer: 6                       3.92269152 searchAllSeeds
+Timer: 7                       0.02532069 extendSeeds
+Timer: 8                       6.89523754 finishReadOne
+Timer: 9                       2.10211059 extendSeeds
+Timer: 10                       0.01495543 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.34727762 read
+Timer: 1                       3.51157670 mmSeeds+instantiateSeeds
+Timer: 2                      38.78071766 searchAllSeeds
+Timer: 3                     116.01989473 extendSeeds
+Timer: 4                       0.05012990 searchAllSeeds
+Timer: 5                       0.26671385 extendSeeds
+Timer: 6                       3.88981732 searchAllSeeds
+Timer: 7                       0.02572316 extendSeeds
+Timer: 8                       6.71990107 finishReadOne
+Timer: 9                       2.11116203 extendSeeds
+Timer: 10                       0.01798261 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+Timer: 0                       1.37142613 read
+Timer: 1                       3.53048216 mmSeeds+instantiateSeeds
+Timer: 2                      38.78945434 searchAllSeeds
+Timer: 3                     116.19567064 extendSeeds
+Timer: 4                       0.04845284 searchAllSeeds
+Timer: 5                       0.24446924 extendSeeds
+Timer: 6                       3.80238088 searchAllSeeds
+Timer: 7                       0.02468765 extendSeeds
+Timer: 8                       6.75427930 finishReadOne
+Timer: 9                       1.94831097 extendSeeds
+Timer: 10                       0.02901658 finishReadOne
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+6548484 reads; of these:
+  6548484 (100.00%) were unpaired; of these:
+    2529436 (38.63%) aligned 0 times
+    3566500 (54.46%) aligned exactly 1 time
+    452548 (6.91%) aligned >1 times
+61.37% overall alignment rate
+6902980 134493100 3092621263
+
+real	2m59.975s
+user	46m4.077s
+sys	1m13.193s
+==============
+#./bowtie2-omp-gcc -p 1024 --no-exact-upfront --no-1mm-upfront -x /scratch/qp-woltka/WoLr1/WoLr1 -q /qmounts/qiita_data/per_sample_FASTQ/101636//Song53_24613_host_filtered.fastq.gz --seed 42 --very-sensitive -k 16 --np 1 --mp 1,1 --rdg 0,1 --rfg 0,1 --score-min  L,0,-0.05 --no-head --no-unal |wc
+==== CPU 1 ==========
+WARNING: No doExactUpFront not supported
+WARNING: do1mmUpFront not supported
+Timer: 0                      22.28692404 read
+Timer: 1                       2.03362161 instantiateSeeds
+Timer: 2                       0.29753571 searchAllSeedsPrepare
+Timer: 3                      37.82342079 searchAllSeedsDo
+Timer: 4                       4.88386777 searchAllSeedsFinalize
+Timer: 5                     167.72193890 extendSeeds
+Timer: 6                       5.81736884 finishReadOne
+Timer: 7                       0.00000000 N/A
+Timer: 8                       0.00000000 N/A
+Timer: 9                       0.00000000 N/A
+Timer: 10                       0.00000000 N/A
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+6548484 reads; of these:
+  6548484 (100.00%) were unpaired; of these:
+    2529436 (38.63%) aligned 0 times
+    3566500 (54.46%) aligned exactly 1 time
+    452548 (6.91%) aligned >1 times
+61.37% overall alignment rate
+6902980 134493100 3092621263
+
+real	4m15.469s
+user	62m56.966s
+sys	0m51.433s
+==== CPU 2 ==========
+WARNING: No doExactUpFront not supported
+WARNING: do1mmUpFront not supported
+Timer: 0                      21.91216062 read
+Timer: 1                       1.80157415 instantiateSeeds
+Timer: 2                       0.26098468 searchAllSeedsPrepare
+Timer: 3                      38.29895212 searchAllSeedsDo
+Timer: 4                       4.79440613 searchAllSeedsFinalize
+Timer: 5                     167.33195301 extendSeeds
+Timer: 6                       5.78061888 finishReadOne
+Timer: 7                       0.00000000 N/A
+Timer: 8                       0.00000000 N/A
+Timer: 9                       0.00000000 N/A
+Timer: 10                       0.00000000 N/A
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+6548484 reads; of these:
+  6548484 (100.00%) were unpaired; of these:
+    2529436 (38.63%) aligned 0 times
+    3566500 (54.46%) aligned exactly 1 time
+    452548 (6.91%) aligned >1 times
+61.37% overall alignment rate
+6902980 134493100 3092621263
+
+real	4m13.490s
+user	62m49.259s
+sys	0m49.347s
+==============
+#./bowtie2-omp-gcc-no2 -p 1024 --no-exact-upfront --no-1mm-upfront -x /scratch/qp-woltka/WoLr1/WoLr1 -q /qmounts/qiita_data/per_sample_FASTQ/101636//Song53_24613_host_filtered.fastq.gz --seed 42 --very-sensitive -k 16 --np 1 --mp 1,1 --rdg 0,1 --rfg 0,1 --score-min  L,0,-0.05 --no-head --no-unal |wc
+==== CPU 1 ==========
+WARNING: No doExactUpFront not supported
+WARNING: do1mmUpFront not supported
+Timer: 0                      11.33880733 read
+Timer: 1                      10.16549575 instantiateSeeds
+Timer: 2                       4.23157870 searchAllSeedsPrepare
+Timer: 3                      36.17727822 searchAllSeedsDo
+Timer: 4                      11.40117977 finishReadOne
+Timer: 5                       0.00000000 N/A
+Timer: 6                       0.00000000 N/A
+Timer: 7                       0.00000000 N/A
+Timer: 8                       0.00000000 N/A
+Timer: 9                       0.00000000 N/A
+Timer: 10                       0.00000000 N/A
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+6548484 reads; of these:
+  6548484 (100.00%) were unpaired; of these:
+    6548484 (100.00%) aligned 0 times
+    0 (0.00%) aligned exactly 1 time
+    0 (0.00%) aligned >1 times
+0.00% overall alignment rate
+      0       0       0
+
+real	1m23.931s
+user	16m57.684s
+sys	2m19.219s
+==== CPU 2 ==========
+WARNING: No doExactUpFront not supported
+WARNING: do1mmUpFront not supported
+Timer: 0                      11.43309276 read
+Timer: 1                       9.96824852 instantiateSeeds
+Timer: 2                       4.23368600 searchAllSeedsPrepare
+Timer: 3                      35.72299883 searchAllSeedsDo
+Timer: 4                      11.92005171 finishReadOne
+Timer: 5                       0.00000000 N/A
+Timer: 6                       0.00000000 N/A
+Timer: 7                       0.00000000 N/A
+Timer: 8                       0.00000000 N/A
+Timer: 9                       0.00000000 N/A
+Timer: 10                       0.00000000 N/A
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+6548484 reads; of these:
+  6548484 (100.00%) were unpaired; of these:
+    6548484 (100.00%) aligned 0 times
+    0 (0.00%) aligned exactly 1 time
+    0 (0.00%) aligned >1 times
+0.00% overall alignment rate
+      0       0       0
+
+real	1m22.560s
+user	16m50.090s
+sys	2m27.092s
+==============
+==============
+==============
+#./bowtie2-omp -p 1024 --no-exact-upfront --no-1mm-upfront -x /scratch/qp-woltka/WoLr1/WoLr1 -q /qmounts/qiita_data/per_sample_FASTQ/101636//Song53_24613_host_filtered.fastq.gz --seed 42 --very-sensitive -k 16 --np 1 --mp 1,1 --rdg 0,1 --rfg 0,1 --score-min  L,0,-0.05 --no-head --no-unal |wc
+==== CPU 1 ==========
+WARNING: No doExactUpFront not supported
+WARNING: do1mmUpFront not supported
+Timer: 0                      23.30028992 read
+Timer: 1                       1.46623791 instantiateSeeds
+Timer: 2                       0.21747548 searchAllSeedsPrepare
+Timer: 3                      21.40311762 searchAllSeedsDo
+Timer: 4                       5.56698062 searchAllSeedsFinalize
+Timer: 5                     161.69943755 extendSeeds
+Timer: 6                       5.43210810 finishReadOne
+Timer: 7                       0.00000000 N/A
+Timer: 8                       0.00000000 N/A
+Timer: 9                       0.00000000 N/A
+Timer: 10                       0.00000000 N/A
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+6548484 reads; of these:
+  6548484 (100.00%) were unpaired; of these:
+    2529436 (38.63%) aligned 0 times
+    3566500 (54.46%) aligned exactly 1 time
+    452548 (6.91%) aligned >1 times
+61.37% overall alignment rate
+6902980 134493100 3092621263
+
+real	3m53.685s
+user	54m58.696s
+sys	3m11.870s
+==== CPU 2 ==========
+WARNING: No doExactUpFront not supported
+WARNING: do1mmUpFront not supported
+Timer: 0                      23.34064158 read
+Timer: 1                       1.45183517 instantiateSeeds
+Timer: 2                       0.23127042 searchAllSeedsPrepare
+Timer: 3                      22.02768055 searchAllSeedsDo
+Timer: 4                       5.47308626 searchAllSeedsFinalize
+Timer: 5                     160.81287275 extendSeeds
+Timer: 6                       5.76270771 finishReadOne
+Timer: 7                       0.00000000 N/A
+Timer: 8                       0.00000000 N/A
+Timer: 9                       0.00000000 N/A
+Timer: 10                       0.00000000 N/A
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+6548484 reads; of these:
+  6548484 (100.00%) were unpaired; of these:
+    2529436 (38.63%) aligned 0 times
+    3566500 (54.46%) aligned exactly 1 time
+    452548 (6.91%) aligned >1 times
+61.37% overall alignment rate
+6902980 134493100 3092621263
+
+real	3m52.424s
+user	55m4.099s
+sys	3m9.818s
+==============
+#./bowtie2-omp-no2 -p 1024 --no-exact-upfront --no-1mm-upfront -x /scratch/qp-woltka/WoLr1/WoLr1 -q /qmounts/qiita_data/per_sample_FASTQ/101636//Song53_24613_host_filtered.fastq.gz --seed 42 --very-sensitive -k 16 --np 1 --mp 1,1 --rdg 0,1 --rfg 0,1 --score-min  L,0,-0.05 --no-head --no-unal |wc
+==== CPU 1 ==========
+WARNING: No doExactUpFront not supported
+WARNING: do1mmUpFront not supported
+Timer: 0                      16.06063805 read
+Timer: 1                       5.65048164 instantiateSeeds
+Timer: 2                       0.24244839 searchAllSeedsPrepare
+Timer: 3                      19.06608145 searchAllSeedsDo
+Timer: 4                      14.03591422 finishReadOne
+Timer: 5                       0.00000000 N/A
+Timer: 6                       0.00000000 N/A
+Timer: 7                       0.00000000 N/A
+Timer: 8                       0.00000000 N/A
+Timer: 9                       0.00000000 N/A
+Timer: 10                       0.00000000 N/A
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+6548484 reads; of these:
+  6548484 (100.00%) were unpaired; of these:
+    6548484 (100.00%) aligned 0 times
+    0 (0.00%) aligned exactly 1 time
+    0 (0.00%) aligned >1 times
+0.00% overall alignment rate
+      0       0       0
+
+real	1m5.466s
+user	11m12.078s
+sys	3m21.067s
+==== CPU 2 ==========
+WARNING: No doExactUpFront not supported
+WARNING: do1mmUpFront not supported
+Timer: 0                      16.49686365 read
+Timer: 1                       5.33258227 instantiateSeeds
+Timer: 2                       0.26250067 searchAllSeedsPrepare
+Timer: 3                      19.18439602 searchAllSeedsDo
+Timer: 4                      13.80817606 finishReadOne
+Timer: 5                       0.00000000 N/A
+Timer: 6                       0.00000000 N/A
+Timer: 7                       0.00000000 N/A
+Timer: 8                       0.00000000 N/A
+Timer: 9                       0.00000000 N/A
+Timer: 10                       0.00000000 N/A
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+6548484 reads; of these:
+  6548484 (100.00%) were unpaired; of these:
+    6548484 (100.00%) aligned 0 times
+    0 (0.00%) aligned exactly 1 time
+    0 (0.00%) aligned >1 times
+0.00% overall alignment rate
+      0       0       0
+
+real	1m4.284s
+user	11m12.654s
+sys	3m20.568s
+==============
+#./bowtie2-omp-gpu-no2 -p 4094 --no-exact-upfront --no-1mm-upfront -x /scratch/qp-woltka/WoLr1/WoLr1 -q /qmounts/qiita_data/per_sample_FASTQ/101636//Song53_24613_host_filtered.fastq.gz --seed 42 --very-sensitive -k 16 --np 1 --mp 1,1 --rdg 0,1 --rfg 0,1 --score-min  L,0,-0.05 --no-head --no-unal |wc
+==== CPU 1 GPU 1 ==========
+WARNING: No doExactUpFront not supported
+WARNING: do1mmUpFront not supported
+Timer: 0                      13.16896970 read
+Timer: 1                       4.35109801 instantiateSeeds
+Timer: 2                       1.45344735 searchAllSeedsPrepare
+Timer: 3                       5.90286642 searchAllSeedsDo
+Timer: 4                       8.15970815 finishReadOne
+Timer: 5                       0.00000000 N/A
+Timer: 6                       0.00000000 N/A
+Timer: 7                       0.00000000 N/A
+Timer: 8                       0.00000000 N/A
+Timer: 9                       0.00000000 N/A
+Timer: 10                       0.00000000 N/A
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+6548484 reads; of these:
+  6548484 (100.00%) were unpaired; of these:
+    6548484 (100.00%) aligned 0 times
+    0 (0.00%) aligned exactly 1 time
+    0 (0.00%) aligned >1 times
+0.00% overall alignment rate
+      0       0       0
+
+real	1m2.094s
+user	5m39.457s
+sys	2m40.223s
+==== CPU 2 GPU 1 ==========
+WARNING: No doExactUpFront not supported
+WARNING: do1mmUpFront not supported
+Timer: 0                      12.69127647 read
+Timer: 1                       4.38223797 instantiateSeeds
+Timer: 2                       2.15995989 searchAllSeedsPrepare
+Timer: 3                       7.24456020 searchAllSeedsDo
+Timer: 4                       7.86779959 finishReadOne
+Timer: 5                       0.00000000 N/A
+Timer: 6                       0.00000000 N/A
+Timer: 7                       0.00000000 N/A
+Timer: 8                       0.00000000 N/A
+Timer: 9                       0.00000000 N/A
+Timer: 10                       0.00000000 N/A
+Timer: 11                       0.00000000 N/A
+Timer: 12                       0.00000000 N/A
+Timer: 13                       0.00000000 N/A
+Timer: 14                       0.00000000 N/A
+Timer: 15                       0.00000000 N/A
+Timer: 16                       0.00000000 N/A
+Timer: 17                       0.00000000 N/A
+Timer: 18                       0.00000000 N/A
+Timer: 19                       0.00000000 N/A
+Timer: 20                       0.00000000 N/A
+Timer: 21                       0.00000000 N/A
+Timer: 22                       0.00000000 N/A
+Timer: 23                       0.00000000 N/A
+Timer: 24                       0.00000000 N/A
+Timer: 25                       0.00000000 N/A
+Timer: 26                       0.00000000 N/A
+Timer: 27                       0.00000000 N/A
+Timer: 28                       0.00000000 N/A
+Timer: 29                       0.00000000 N/A
+Timer: 30                       0.00000000 N/A
+Timer: 31                       0.00000000 N/A
+6548484 reads; of these:
+  6548484 (100.00%) were unpaired; of these:
+    6548484 (100.00%) aligned 0 times
+    0 (0.00%) aligned exactly 1 time
+    0 (0.00%) aligned >1 times
+0.00% overall alignment rate
+      0       0       0
+
+real	1m2.664s
+user	5m40.540s
+sys	2m52.503s
+==============

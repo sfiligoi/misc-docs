@@ -1,0 +1,118 @@
+diff --git a/bt2_search.cpp b/bt2_search.cpp
+index e4c2b5e..e367bdb 100644
+--- a/bt2_search.cpp
++++ b/bt2_search.cpp
+@@ -2961,6 +2961,49 @@ public:
+ 	}
+ };
+ 
++#include <iostream>
++#include <ctime>
++#include <ratio>
++#include <chrono>
++
++class MyTimer {
++public:
++	MyTimer() {
++		for (int i=0; i<32; i++) msgs[i]="N/A";
++		reset();
++	}
++
++	void reset() {
++		for (int i=0; i<32; i++) dt[i]=0.0;
++	}
++
++	void start() {
++		curr = 0;
++		t[curr] = std::chrono::high_resolution_clock::now();
++	}
++
++	void next(const char *msg = "???") {
++		t[curr+1] = std::chrono::high_resolution_clock::now();
++		std::chrono::duration<double> time_span = std::chrono::duration_cast<std::chrono::duration<double>>(t[curr+1] - t[curr]);
++		double mydt = time_span.count();
++		//fprintf(stderr, "dt: %i %32.8f %s\n",curr,mydt,msg);
++		dt[curr] += mydt;
++		msgs[curr] = msg;
++		curr++;
++	}
++
++	void print() {
++		for (int i=0; i<32; i++) {
++		  fprintf(stderr, "Timer: %i %32.8f %s\n",i,dt[i],msgs[i]);
++		} 
++	}
++
++	int curr;
++	std::chrono::high_resolution_clock::time_point t[32];
++	double dt[32];
++	const char* msgs[32];
++};
++
+ /**
+  * Called once per thread.  Sets up per-thread pointers to the shared global
+  * data structures, creates per-thread structures, then enters the alignment
+@@ -3132,7 +3175,15 @@ static void multiseedSearchWorker(void *vp) {
+ 		int mergei = 0;
+ 		int mergeival = 16;
+ 		bool done = false;
++	MyTimer tmr; 
++                uint64_t repcnt = 0;
+ 		while(!done) {
++                   repcnt++;
++
++		   // reset counters after warmup
++		   if (repcnt==4) tmr.reset();
++
++		   tmr.start();
+ 			pair<bool, bool> ret = ps->nextReadPair();
+ 			bool success = ret.first;
+ 			done = ret.second;
+@@ -3193,6 +3244,7 @@ static void multiseedSearchWorker(void *vp) {
+ 					current_node = node;
+ 				}
+ #endif
++		   tmr.next("read");
+ 				// Try to align this read
+ 				while(retry) {
+ 					retry = false;
+@@ -3823,6 +3875,7 @@ static void multiseedSearchWorker(void *vp) {
+ 								seedsTried += (inst.first + inst.second);
+ 							seedsTriedMS[mate * 2 + 0] = instFw.first + instFw.second;
+ 							seedsTriedMS[mate * 2 + 1] = instRc.first + instRc.second;
++		   tmr.next("mmSeeds+instantiateSeeds");
+ 								// Align seeds
+ 								al.searchAllSeeds(
+ 									*seeds[mate],     // search seeds
+@@ -3863,6 +3916,7 @@ static void multiseedSearchWorker(void *vp) {
+ 									uniqFactor[i] = shs[i].uniquenessFactor();
+ 								}
+ 							}
++		   tmr.next("searchAllSeeds");
+ 							// Possibly reorder the mates
+ 							matemap[0] = 0; matemap[1] = 1;
+ 							if(!shs[0].empty() && !shs[1].empty() && uniqFactor[1] > uniqFactor[0]) {
+@@ -4007,6 +4061,7 @@ static void multiseedSearchWorker(void *vp) {
+ 									}
+ 								} // if(!seedSumm)
+ 							} // for(size_t matei = 0; matei < 2; matei++)
++		   tmr.next("extendSeeds");
+ 
+ 							// We don't necessarily have to continue investigating both
+ 							// mates.  We continue on a mate only if its average
+@@ -4086,6 +4141,7 @@ static void multiseedSearchWorker(void *vp) {
+ 					seedSumm,             // suppress alignments?
+ 					scUnMapped,           // Consider soft-clipped bases unmapped when calculating TLEN
+ 					xeq);
++		   tmr.next("finishReadOne");
+ 				assert(!retry || msinkwrap.empty());
+ 			} // while(retry)
+ 		} // if(rdid >= skipReads && rdid < qUpto)
+@@ -4101,6 +4157,7 @@ static void multiseedSearchWorker(void *vp) {
+ 		}
+ 	} // while(true)
+ 
++		tmr.print();
+ 	// One last metrics merge
+ 	MERGE_METRICS(metrics);
+ 

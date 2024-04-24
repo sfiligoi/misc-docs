@@ -1,0 +1,34 @@
+#!/bin/bash
+#SBATCH --mem=320G
+#SBATCH --exclusive
+#SBATCH -o slurm-run-s1-%j.out
+#SBATCH -e slurm-run-s1-%j.out
+#SBATCH -t 1:00:00
+hostname
+lscpu
+echo "=============="
+cd /home/isfiligoi/github
+source setup_conda.sh
+conda activate bowtie2-dev
+cd /home/isfiligoi/github/bowtie2-new-wtiming/bowtie2
+export "CFLAGS=-isystem /panfs/isfiligoi/t8/ana3/envs/bowtie2-dev/include"
+export "CXXFLAGS=-isystem /panfs/isfiligoi/t8/ana3/envs/bowtie2-dev/include"
+export "CPPFLAGS=-isystem /panfs/isfiligoi/t8/ana3/envs/bowtie2-dev/include"
+git log |head
+git log |head 1>&2
+echo "=============="
+INDIR=/qmounts/qiita_data/per_sample_FASTQ/101636/
+INFILE=Song53_24613_host_filtered.fastq.gz
+
+INPATH=${INDIR}/${INFILE}
+md5sum ${INPATH}
+
+echo "#./bowtie2 -p 32 --no-exact-upfront --no-1mm-upfront -x /scratch/qp-woltka/WoLr2/WoLr2 -q ${INPATH} --seed 42 --very-sensitive -k 16 --np 1 --mp "1,1" --rdg "0,1" --rfg "0,1" --score-min  "L,0,-0.05" --no-head --no-unal |wc"
+echo "==== CPU 1 =========="
+rm -f a.saml
+time taskset -c 0-15,32-47 ./bowtie2 -p 32 --no-exact-upfront --no-1mm-upfront -x /scratch/qp-woltka/WoLr2/WoLr2 -q ${INPATH} --seed 42 --very-sensitive -k 16 --np 1 --mp "1,1" --rdg "0,1" --rfg "0,1" --score-min  "L,0,-0.05" --no-head --no-unal |wc
+echo "==== CPU 2 =========="
+rm -f a.saml
+time taskset -c 16-31,48-63 ./bowtie2 -p 32 --no-exact-upfront --no-1mm-upfront -x /scratch/qp-woltka/WoLr2/WoLr2 -q ${INPATH} --seed 42 --very-sensitive -k 16 --np 1 --mp "1,1" --rdg "0,1" --rfg "0,1" --score-min  "L,0,-0.05" --no-head --no-unal |wc
+echo "=============="
+

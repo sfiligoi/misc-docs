@@ -1,0 +1,20 @@
+commit a43fa6f43f54989468a294967898f85b9fe4cefa
+Author: Rone Charles <rone_charles@fastmail.com>
+Date:   Tue Jan 16 19:01:39 2024 -0500
+
+    Remove whitespace character preventing the removal -lrt from LDLIBS
+
+commit 5da112226f57d68108e9c8d8d155bd0bd7f6c7f7
+Author: Rone Charles <rone_charles@fastmail.com>
+Date:   Tue Jan 16 11:41:09 2024 -0500
+
+    Disable warnings for variables that are set but unused
+
+commit 760671bf2384735cfdb5bfd89c95da9e6389790d
+Author: Rone Charles <rone_charles@fastmail.com>
+Date:   Thu Jan 11 07:07:14 2024 -0500
+
+    Remove librt when cross-compiling Windows on Linux
+
+commit ca873ed32049ba1c1bd95cff3421221aa27b1edf
+Author: Rone Charles <rone_charles@fastmail.com>

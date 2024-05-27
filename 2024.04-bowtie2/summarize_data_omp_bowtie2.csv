@@ -1,0 +1,13 @@
+#FM Index, Reads to be aligned, Bowtie2 Version, CPU/GPU used, Seed search
+WoLr1, Song53_24613_host_filtered, omp-bowtie2-prime, NVIDIA_GeForce_RTX_3090, 5.9
+WoLr1, Song53_24613_host_filtered, omp-bowtie2-prime, AMD_EPYC_7302_16, 19.1
+WoLr1, Song53_24613_host_filtered, omp-bowtie2-prime, NVIDIA_GeForce_RTX_3090, 6.0
+WoLr1, Song53_24613_host_filtered, omp-bowtie2-prime, AMD_EPYC_7302_16, 25.4
+WoLr1, Mousseau88_FIN_373_host_filtered, omp-bowtie2-prime, NVIDIA_GeForce_RTX_3090, 5.5
+WoLr1, Mousseau88_FIN_373_host_filtered, omp-bowtie2-prime, AMD_EPYC_7302_16, 22.2
+WoLr1, Mousseau88_FIN_373_host_filtered, omp-bowtie2-prime, NVIDIA_GeForce_RTX_3090, 5.4
+WoLr1, Mousseau88_FIN_373_host_filtered, omp-bowtie2-prime, AMD_EPYC_7302_16, 17.6
+WoLr1, Girguis50_RightEG4_host_filtered, omp-bowtie2-prime, NVIDIA_GeForce_RTX_3090, 5.0
+WoLr1, Girguis50_RightEG4_host_filtered, omp-bowtie2-prime, AMD_EPYC_7302_16, 17.1
+WoLr1, Girguis50_RightEG4_host_filtered, omp-bowtie2-prime, NVIDIA_GeForce_RTX_3090, 5.5
+WoLr1, Girguis50_RightEG4_host_filtered, omp-bowtie2-prime, AMD_EPYC_7302_16, 22.1

@@ -12,8 +12,9 @@ for d in "WoLr1 -w1" "WoLr2 -w2" "RS210 -rs"; do
       for c in `(cd ../raw_results/$b/data && ls -d *)`; do
         for f in `ls ../raw_results/$b/data/$c/*${i2}${d2}*.out 2>/dev/null`; do
           ./summarize_one_gpu.sh "$f" "${d1}, ${i1}, $b, $c"
-
-          ./summarize_one_gpu_cpu.sh "$f" "${d1}, ${i1}, $b, AMD_EPYC_7302_16"
+          # need to hard-code the CPU version
+          ./summarize_one_gpu_cpu.sh "$f" "${d1}, ${i1}, $b, AMD_EPYC_7302_16 (nvc++)"
+          ./summarize_one_gpu_gcc.sh "$f" "${d1}, ${i1}, $b, AMD_EPYC_7302_16 (g++)"
         done
       done
     done

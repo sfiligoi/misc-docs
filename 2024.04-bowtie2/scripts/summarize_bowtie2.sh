@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "#FM Index, Reads to be aligned, Bowtie2 Version, CPU used, Seed search, Seed alignment"
+echo "#FM Index, Reads to be aligned, Bowtie2 Version, CPU used, Seed search, Remainder, Total, Seed search fraction"
 for d in "WoLr1 -w1" "WoLr2" "RS210 -rs"; do
   d1=`echo "$d" | awk '{print $1}'`
   d2=`echo "$d" | awk '{print $2}'`

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "#FM Index, Reads to be aligned, Bowtie2 Version, CPU used, Seed search, Remainder, Total, Seed search fraction"
+echo "#FM Index, Reads to be aligned, Overall alignment rate, Bowtie2 Version, CPU used, Seed search, Remainder, Total, Seed search fraction"
 for d in "WoLr1 -w1" "WoLr2" "RS210 -rs"; do
   d1=`echo "$d" | awk '{print $1}'`
   d2=`echo "$d" | awk '{print $2}'`
@@ -11,7 +11,7 @@ for d in "WoLr1 -w1" "WoLr2" "RS210 -rs"; do
     for b in `(cd ../raw_results && ls -d bowtie2-v*)`; do
       for c in `(cd ../raw_results/$b/data && ls -d *)`; do
         for f in `ls ../raw_results/$b/data/$c/*${i2}${d2}.*out 2>/dev/null`; do
-          ./summarize_one_bowtie2.sh "$f" "${d1}, ${i1}, $b, $c"
+          ./summarize_one_bowtie2.sh "$f" "${d1}, ${i1}" "$b, $c"
         done
       done
     done
